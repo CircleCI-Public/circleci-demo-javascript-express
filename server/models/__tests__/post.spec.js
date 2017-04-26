@@ -22,17 +22,6 @@ test.afterEach.always(t => {
   dropDB(t);
 });
 
-test.serial('Should correctly give number of Posts', async t => {
-  t.plan(2);
-
-  const res = await request(app)
-    .get('/api/posts')
-    .set('Accept', 'application/json');
-
-  t.is(res.status, 200);
-  t.deepEqual(posts.length, res.body.posts.length);
-});
-
 test.serial('Should send correct data when queried against a cuid', async t => {
   t.plan(2);
 
