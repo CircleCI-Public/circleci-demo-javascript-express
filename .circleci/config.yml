@@ -8,6 +8,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: update-npm
+          command: 'npm install -g npm@latest'
+      - run:
           name: install-npm-wee
           command: npm install
       - run:
