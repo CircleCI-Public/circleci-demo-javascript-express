@@ -34,6 +34,10 @@ jobs:
           at: /root/mern-starter
 
       - run:
+          command: |
+            ls -al
+            ls -al /root/mern-starter
+      - run:
           name: test
           command: npm test
       - run:
