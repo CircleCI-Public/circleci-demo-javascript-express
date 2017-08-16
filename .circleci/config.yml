@@ -1,10 +1,13 @@
+defaults: &defaults
+  working_directory: ~/mern-starter
+  docker:
+    - image: node:8.3
+    - image: mongo:3.4.7
+
 version: 2
 jobs:
   build:
-    working_directory: ~/mern-starter
-    docker:
-      - image: node:8.3
-      - image: mongo:3.4.7
+    <<: *defaults
     steps:
       - checkout
       - restore_cache:
@@ -19,6 +22,15 @@ jobs:
       - run:
           name: make test results folder
           command: mkdir test_results
+      - persist_to_workspace:
+          root: mern-starter
+            
+  test:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/mern-starter
+
       - run:
           name: test
           command: npm test
@@ -32,3 +44,13 @@ jobs:
           prefix: coverage
       - store_test_results:
           path: test_results
+
+workflows:
+  version: 2
+
+  btd:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
