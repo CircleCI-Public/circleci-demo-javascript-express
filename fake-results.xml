@@ -1,37 +1,16 @@
-<testsuite name="TAP Tests" tests="35" failures="0" errors="0" skipped="0" timestamp="Wed, 16 Aug 2017 01:33:28 GMT" time="11.899">
-<testcase classname="" name="client - modules - App - AppActions - should return the correct type for toggleAddPost" time="0"/>
-<testcase classname="" name="client - modules - Intl - IntlActions - should return the correct type for switchLanguage" time="0"/>
-<testcase classname="" name="client - modules - App - AppReducer - action for TOGGLE_ADD_POST is working" time="0"/>
-<testcase classname="" name="client - modules - App - AppReducer - getShowAddPost selector" time="0"/>
-<testcase classname="" name="client - modules - Intl - IntlReducer - action for SWITCH_LANGUAGE is working" time="0"/>
-<testcase classname="" name="client - modules - Post - PostActions - should return the correct type for addPost" time="0"/>
-<testcase classname="" name="client - modules - Post - PostActions - should return the correct type for deletePost" time="0"/>
-<testcase classname="" name="client - modules - Post - PostReducer - action for ADD_POST is working" time="0"/>
-<testcase classname="" name="client - modules - Post - PostActions - should return the correct type for addPosts" time="0"/>
-<testcase classname="" name="client - modules - Post - PostReducer - action for DELETE_POST is working" time="0"/>
-<testcase classname="" name="client - modules - App - App - renders properly" time="0"/>
-<testcase classname="" name="client - modules - App - Components - Header - renders the header properly" time="0"/>
-<testcase classname="" name="client - modules - App - Components - Header - doesn't add post in pages other than home" time="0"/>
-<testcase classname="" name="client - modules - App - Components - Footer - renders the footer properly" time="0"/>
-<testcase classname="" name="client - modules - App - Components - Header - toggleAddPost called properly" time="0"/>
-<testcase classname="" name="client - modules - Post - components - PostList - renders the list" time="0"/>
-<testcase classname="" name="client - modules - Post - components - PostListItem - renders properly" time="0"/>
-<testcase classname="" name="client - modules - Post - PostReducer - action for ADD_POSTS is working" time="0"/>
-<testcase classname="" name="client - modules - Post - components - PostCreateWidget - renders properly" time="0"/>
-<testcase classname="" name="client - modules - Post - PostReducer - getPosts selector" time="0"/>
-<testcase classname="" name="client - modules - Post - PostReducer - getPost selector" time="0"/>
-<testcase classname="" name="client - modules - Post - components - PostListItem - has correct props" time="0"/>
-<testcase classname="" name="client - modules - Post - components - PostListItem - calls onDelete" time="0"/>
-<testcase classname="" name="client - modules - Post - components - PostCreateWidget - hide when showAddPost is false" time="0"/>
-<testcase classname="" name="client - modules - Post - components - PostCreateWidget - has correct props" time="0"/>
-<testcase classname="" name="client - modules - App - App - calls componentDidMount" time="0"/>
-<testcase classname="" name="client - modules - App - App - calling toggleAddPostSection dispatches toggleAddPost" time="0"/>
-<testcase classname="" name="client - modules - Post - components - PostCreateWidget - calls addPost" time="0"/>
-<testcase classname="" name="client - modules - Post - components - PostCreateWidget - empty form doesn't call addPost" time="0"/>
-<testcase classname="" name="client - util - apiCaller - method defaults to GET" time="0"/>
-<testcase classname="" name="client - util - apiCaller - sends the body" time="0"/>
-<testcase classname="" name="client - util - apiCaller - returns the error" time="0"/>
-<testcase classname="" name="server - models - post - Should send correct data when queried against a cuid" time="0"/>
-<testcase classname="" name="server - models - post - Should correctly add a post" time="0"/>
-<testcase classname="" name="server - models - post - Should correctly delete a post" time="0"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite errors="0" failures="0" name="test_api.APITestCase-20170713141358" skipped="0" tests="9" time="1.926">
+	<testcase classname="test_api.APITestCase" name="test_404" time="0.202"/>
+	<testcase classname="test_api.APITestCase" name="test_anonymous" time="0.190"/>
+	<testcase classname="test_api.APITestCase" name="test_bad_auth" time="0.217"/>
+	<testcase classname="test_api.APITestCase" name="test_comments" time="0.236"/>
+	<testcase classname="test_api.APITestCase" name="test_no_auth" time="0.181"/>
+	<testcase classname="test_api.APITestCase" name="test_posts" time="0.253"/>
+	<testcase classname="test_api.APITestCase" name="test_token_auth" time="0.198"/>
+	<testcase classname="test_api.APITestCase" name="test_unconfirmed_account" time="0.241"/>
+	<testcase classname="test_api.APITestCase" name="test_users" time="0.209"/>
+	<system-out>
+<![CDATA[]]>	</system-out>
+	<system-err>
+<![CDATA[]]>	</system-err>
 </testsuite>
