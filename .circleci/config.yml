@@ -43,10 +43,10 @@ jobs:
       - checkout
       - command: echo yolo
 
-workflows:
-  version: 2
-  btd:
-    jobs:
-      - build
-      - test
-      - deploy
+#workflows:
+#  version: 2
+#  btd:
+#    jobs:
+#      - build
+#      - test
+#      - deploy
