@@ -4,7 +4,6 @@ jobs:
     working_directory: ~/mern-starter
     docker:
       - image: circleci/node:8.3
-      - image: mongo:3.2.11
     steps:
       - checkout
       - run:
@@ -34,11 +33,16 @@ jobs:
       - store_test_results:
           path: test-results.xml
   test:
+    docker:
+      - image: circleci/node:8.3
+      - image: mongo:3.2.11
     steps:
       - checkout
       - command: npm test
 
   deploy:
+    docker:
+      - image: circleci/node:8.3
     steps:
       - checkout
       - command: echo yolo
