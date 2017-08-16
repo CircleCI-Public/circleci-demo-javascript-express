@@ -92,11 +92,11 @@ workflows:
           filters:
             branches:
               only:
-                - master
+                - prod
       - deploy:
           requires:
             - create_docker
           filters:
             branches:
               only:
-                - master
+                - prod
