@@ -20,10 +20,10 @@ jobs:
           name: test
           command: npm test
       - run: 
-        name: move results
-        command: |
-          mkdir test_results
-          mv test-results.xml test_results
+          name: move results
+          command: |
+            mkdir test_results
+            mv test-results.xml test_results
       - run:
           name: code-coverage
           command: './node_modules/.bin/nyc report --reporter=text-lcov'
