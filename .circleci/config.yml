@@ -31,7 +31,7 @@ jobs:
     <<: *defaults
     steps:
       - attach_workspace:
-          at: /root/mern-starter
+          at: /root
 
       - run:
           command: |
