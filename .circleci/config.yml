@@ -51,6 +51,32 @@ jobs:
       - store_test_results:
           path: test_results
 
+  create_docker:
+    <<: *defaults
+    - attach_workspace:
+        at: /root
+    - setup_remote_docker
+    - run:
+        name: Build and Push Docker Image
+        command: |
+          docker build -t levlaz/circleci-demo-js-express .
+          docker tag levlaz/circleci-demo-js-express:$CIRCLE_SHA1 levlaz/circleci-demo-js-express:stable
+          docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+          docker push levlaz/circleci-demo-js-express
+
+  deploy:
+    <<: *defaults
+    - attach_workspace:
+        at: /root
+    branches:
+      only:
+        - master
+    run:
+      name: deploy to AWS
+      command: |
+        ./deploy.sh
+
+
 workflows:
   version: 2
 
@@ -60,3 +86,10 @@ workflows:
       - test:
           requires:
             - build
+      - create_docker:
+          requires:
+            - test
+          filters:
+            branches:
+              only:
+                - master
