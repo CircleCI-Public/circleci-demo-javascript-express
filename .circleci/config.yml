@@ -19,7 +19,8 @@ jobs:
       - run:
           name: test
           command: npm test
-      - run: move results
+      - run: 
+        name: move results
         command: |
           mkdir test_results
           mv test-results.xml test_results
