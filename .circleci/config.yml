@@ -1,42 +1,24 @@
-defaults: &defaults
-  working_directory: ~/mern-starter
-  docker:
-    - image: node:8.3
-    - image: mongo:3.4.7
-
 version: 2
 jobs:
   build:
-    <<: *defaults
+    working_directory: ~/mern-starter
+    docker:
+      - image: circleci/node:4.8.2
+      - image: mongo:3.4.4
     steps:
       - checkout
+      - run:
+          name: update-npm
+          command: 'sudo npm install -g npm@latest'
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
-          name: install dependencies
+          name: install-npm-wee
           command: npm install
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - ./node_modules
-      - run:
-          name: make test results folder
-          command: mkdir test_results
-      - persist_to_workspace:
-          root: /root
-          paths:
-            - mern-starter
-            
-  test:
-    <<: *defaults
-    steps:
-      - attach_workspace:
-          at: /root
-
-      - run:
-          command: |
-            ls -al
-            ls -al /root/mern-starter
       - run:
           name: test
           command: npm test
@@ -44,59 +26,10 @@ jobs:
           name: code-coverage
           command: './node_modules/.bin/nyc report --reporter=text-lcov'
       - store_artifacts:
-          path: test_results
+          path: test-results.xml
+          prefix: tests
       - store_artifacts:
           path: coverage
           prefix: coverage
       - store_test_results:
-          path: test_results
-
-  create_docker:
-    <<: *defaults
-    steps:
-      - attach_workspace:
-          at: /root
-      - setup_remote_docker
-      - run:
-          name: Build and Push Docker Image
-          command: |
-            docker build -t levlaz/circleci-demo-js-express .
-            docker tag levlaz/circleci-demo-js-express:$CIRCLE_SHA1 levlaz/circleci-demo-js-express:stable
-            docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-            docker push levlaz/circleci-demo-js-express
-
-  deploy:
-    <<: *defaults
-    steps:
-      - attach_workspace:
-          at: /root
-      - run:
-          name: deploy to AWS
-          command: |
-            ./script/deploy.sh
-
-
-
-workflows:
-  version: 2
-
-  btd:
-    jobs:
-      - build
-      - test:
-          requires:
-            - build
-      - create_docker:
-          requires:
-            - test
-          filters:
-            branches:
-              only:
-                - prod
-      - deploy:
-          requires:
-            - create_docker
-          filters:
-            branches:
-              only:
-                - prod
+          path: test-results.xml

@@ -1,4 +1,5 @@
-FROM node:8.3.0
+FROM node
+MAINTAINER jaga santagostino <kandros5591@gmail.com>
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
@@ -8,8 +9,7 @@ RUN npm install
 COPY . /usr/src/app
 
 ENV NODE_ENV production
-RUN npm run clean && npm run build && npm run build:server
 
 EXPOSE 8000
-CMD ["npm", "run", "start:prod"]
+CMD ["npm", "run", "bs"]
 
