@@ -8,3 +8,5 @@ public/*
 dist
 coverage/
 .nyc_output/
+*.swp
+test-results.xml

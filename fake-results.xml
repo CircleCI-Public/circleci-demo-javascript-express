@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite errors="0" failures="0" name="test_api.APITestCase-20170713141358" skipped="0" tests="9" time="1.926">
+	<testcase classname="test_api.APITestCase" name="test_404" time="0.202"/>
+	<testcase classname="test_api.APITestCase" name="test_anonymous" time="0.190"/>
+	<testcase classname="test_api.APITestCase" name="test_bad_auth" time="0.217"/>
+	<testcase classname="test_api.APITestCase" name="test_comments" time="0.236"/>
+	<testcase classname="test_api.APITestCase" name="test_no_auth" time="0.181"/>
+	<testcase classname="test_api.APITestCase" name="test_posts" time="0.253"/>
+	<testcase classname="test_api.APITestCase" name="test_token_auth" time="0.198"/>
+	<testcase classname="test_api.APITestCase" name="test_unconfirmed_account" time="0.241"/>
+	<testcase classname="test_api.APITestCase" name="test_users" time="0.209"/>
+	<system-out>
+<![CDATA[]]>	</system-out>
+	<system-err>
+<![CDATA[]]>	</system-err>
+</testsuite>
