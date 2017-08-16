@@ -23,7 +23,9 @@ jobs:
           name: make test results folder
           command: mkdir test_results
       - persist_to_workspace:
-          root: /root/mern-starter
+          root: /root
+          paths:
+            - mern-starter
             
   test:
     <<: *defaults
