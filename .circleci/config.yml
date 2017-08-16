@@ -68,13 +68,10 @@ jobs:
     <<: *defaults
     - attach_workspace:
         at: /root
-    branches:
-      only:
-        - master
-    run:
-      name: deploy to AWS
-      command: |
-        ./deploy.sh
+    - run:
+        name: deploy to AWS
+        command: |
+          ./deploy.sh
 
 
 workflows:
@@ -89,6 +86,13 @@ workflows:
       - create_docker:
           requires:
             - test
+          filters:
+            branches:
+              only:
+                - master
+      - deploy:
+          requires:
+            - create_docker
           filters:
             branches:
               only:
