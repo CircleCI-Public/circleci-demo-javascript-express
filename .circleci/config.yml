@@ -34,4 +34,3 @@ jobs:
       - store_test_results:
           path: test-results.xml
           
-          test
