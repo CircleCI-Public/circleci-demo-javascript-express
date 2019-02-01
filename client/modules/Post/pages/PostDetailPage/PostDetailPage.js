@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
@@ -25,7 +26,7 @@ export function PostDetailPage(props) {
   );
 }
 
-// Actions required to provide data for this component to render in sever side.
+// Actions required to provide data for this component to render in server side.
 PostDetailPage.need = [params => {
   return fetchPost(params.cuid);
 }];
