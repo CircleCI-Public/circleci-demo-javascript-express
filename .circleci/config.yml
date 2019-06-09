@@ -9,7 +9,8 @@ jobs:
       - checkout
       - run:
           name: update-npm
-          command: sudo npm install --global cross-env
+          command: - run: 'sudo npm install -g npm@5'
+      - run: npm install --save
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
