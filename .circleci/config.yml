@@ -15,6 +15,9 @@ jobs:
       - run:
           name: install-npm-wee
           command: npm install
+      - run:
+          name: install husky
+          command: npm install husky --save-dev
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
