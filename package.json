@@ -156,7 +156,6 @@
     "statements": 60, 
     "check-coverage": true
   },
-  {
   "husky": {
     "hooks": {
       "pre-commit": "npm test",
@@ -164,5 +163,4 @@
       "...": "..."
     }
   }
-}
 }
