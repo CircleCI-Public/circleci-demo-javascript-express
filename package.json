@@ -14,6 +14,7 @@
     "build:server": "cross-env NODE_ENV=production webpack --config webpack.config.server.js",
     "clean": "rimraf dist",
     "slate": "rimraf node_modules && npm install",
+    "coverage:check": "istanbul check-coverage",
     "lint": "eslint client server"
   },
   "pre-commit": [
@@ -152,6 +153,7 @@
     "branches": 80,
     "lines": 80,
     "functions": 80,
-    "statements": 80
+    "statements": 80, 
+    "check-coverage": true
   }
 }
