@@ -155,7 +155,7 @@
     "functions": 60,
     "statements": 60, 
     "check-coverage": true
-  }
+  },
   {
   "husky": {
     "hooks": {
