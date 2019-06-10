@@ -7,7 +7,6 @@
     "watch:test": "npm run test -- --watch",
     "cover": "nyc npm run test",
     "check-coverage": "istanbul check-coverage --root coverage --lines 98 --functions 98 --statements 98 --branches 98",
-    "posttest": "node ./lib/cli.js check-coverage --statements 60 --branches 60",
     "start": "cross-env BABEL_DISABLE_CACHE=1 NODE_ENV=development nodemon index.js",
     "start:prod": "cross-env NODE_ENV=production node index.js",
     "bs": "npm run clean && npm run build && npm run build:server && npm run start:prod",
@@ -149,7 +148,7 @@
       "lcov",
       "text",
       "html"
-    ]
+    ],
     "branches": 80,
     "lines": 80,
     "functions": 80,
