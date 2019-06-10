@@ -10,6 +10,7 @@ jobs:
       - run:
           name: update-npm
           command: 'sudo npm install -g npm@5'
+      - run: npm install --save
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
