@@ -3,23 +3,23 @@ jobs:
   build:
     working_directory: ~/mern-starter
     docker:
-      - image: circleci/node
+      - image: circleci/node:4.8.2
       - image: mongo:3.4.4
     steps:
       - checkout
       - run:
           name: update-npm
-          command: 'sudo npm install -g npm@3.5.2'
+          command: 'sudo npm install -g npm@5'
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
           name: install-npm-wee
           command: npm install
       - run:
-          name: "Instal and Lint Code"
+          name: "Install and Lint Code"
           command: |
             npm install --save-dev eslint
-            npm run lint .
+            npm run lint
       - run:
           name: install husky
           command: npm install husky --save-dev
