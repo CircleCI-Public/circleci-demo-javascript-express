@@ -3,4 +3,4 @@ webpack.config.prod.js
 webpack.config.server.js
 webpack.config.babel.js
 index.js
-/node_modules/*
+node_modules/*
