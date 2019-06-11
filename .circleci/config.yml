@@ -19,7 +19,7 @@ jobs:
           name: "Instal and Lint Code"
           command: |
             npm install eslint --save-dev
-            npm run lint 
+            eslint .
       - run:
           name: install husky
           command: npm install husky --save-dev
