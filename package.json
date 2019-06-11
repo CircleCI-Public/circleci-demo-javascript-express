@@ -7,7 +7,7 @@
     "watch:test": "npm run test -- --watch",
     "cover": "nyc npm run test",
     "check-coverage": "istanbul check-coverage --root coverage --lines 98 --functions 98 --statements 98 --branches 98",
-    "start": "cross-env BABEL_DISABLE_CACHE=1 NODE_ENV=development nodemon index.js ./app",
+    "start": "cross-env BABEL_DISABLE_CACHE=1 NODE_ENV=development nodemon index.js",
     "start:prod": "cross-env NODE_ENV=production node index.js",
     "bs": "npm run clean && npm run build && npm run build:server && npm run start:prod",
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
@@ -15,8 +15,7 @@
     "clean": "rimraf dist",
     "slate": "rimraf node_modules && npm install",
     "coverage:check": "istanbul check-coverage",
-    "lint": "eslint ",
-    "dev": "nodemon ./app --exec \"npm run lint && node\""
+    "lint": "eslint "
   },
   "pre-commit": [
     "lint",
