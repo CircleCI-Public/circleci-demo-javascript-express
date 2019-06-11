@@ -16,7 +16,7 @@ jobs:
           name: install-npm-wee
           command: npm install
       - run:
-          name: "Install and Lint Code"
+          name: "Instal and Lint Code"
           command: |
             npm install eslint --save-dev
             npm run lint 
