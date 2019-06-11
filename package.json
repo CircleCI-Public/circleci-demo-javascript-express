@@ -15,7 +15,8 @@
     "clean": "rimraf dist",
     "slate": "rimraf node_modules && npm install",
     "coverage:check": "istanbul check-coverage",
-    "lint": "eslint ."
+    "pretest": "eslint --ignore-path .gitignore .",
+    "lint": "eslint"
   },
   "pre-commit": [
     "lint",
