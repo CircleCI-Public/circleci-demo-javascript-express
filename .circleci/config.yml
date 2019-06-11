@@ -16,10 +16,8 @@ jobs:
           name: install-npm-wee
           command: npm install
       - run:
-          name: "Lint Code"
-          command: |
-            yarn install
-            yarn lint
+          name: "Install and Lint Code"
+          command: npm i eslint -D
       - run:
           name: install husky
           command: npm install husky --save-dev
