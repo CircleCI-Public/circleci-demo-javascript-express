@@ -28,4 +28,4 @@ export default {
   		  other {has # comments}
   		} as of {date} (in real app this would be translated to French)`,
   },
-};
+}

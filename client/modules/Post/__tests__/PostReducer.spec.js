@@ -1,7 +1,7 @@
-import test from 'ava';
-import { reducerTest } from 'redux-ava';
-import postReducer, { getPost, getPosts } from '../PostReducer';
-import { addPost, deletePost, addPosts } from '../PostActions';
+import test from 'ava'
+import { reducerTest } from 'redux-ava'
+import postReducer, { getPost, getPosts } from '../PostReducer'
+import { addPost, deletePost, addPosts } from '../PostActions'
 
 test('action for ADD_POST is working', reducerTest(
   postReducer,
@@ -22,7 +22,7 @@ test('action for ADD_POST is working', reducerTest(
     cuid: null,
     slug: 'first-post',
   }, 'foo'] },
-));
+))
 
 test('action for DELETE_POST is working', reducerTest(
   postReducer,
@@ -36,7 +36,7 @@ test('action for DELETE_POST is working', reducerTest(
   }] },
   deletePost('abc'),
   { data: [] },
-));
+))
 
 test('action for ADD_POSTS is working', reducerTest(
   postReducer,
@@ -59,7 +59,7 @@ test('action for ADD_POSTS is working', reducerTest(
     cuid: null,
     slug: 'first-post',
   }] },
-));
+))
 
 test('getPosts selector', t => {
   t.deepEqual(
@@ -67,8 +67,8 @@ test('getPosts selector', t => {
       posts: { data: ['foo'] },
     }),
     ['foo']
-  );
-});
+  )
+})
 
 test('getPost selector', t => {
   t.deepEqual(
@@ -76,6 +76,6 @@ test('getPost selector', t => {
       posts: { data: [{ cuid: '123' }] },
     }, '123'),
     { cuid: '123' }
-  );
-});
+  )
+})
 
