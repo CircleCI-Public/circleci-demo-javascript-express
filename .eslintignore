@@ -4,3 +4,6 @@ webpack.config.server.js
 webpack.config.babel.js
 index.js
 /*node_modules*/
+"/*node_modules*/"
+'/*node_modules*/'
+"exclude": **/node_modules/**
