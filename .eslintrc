@@ -10,7 +10,7 @@
     "sourceType": "module"
   },
   "rules": {
-    "comma-dangle": ["error", "always-multiline"],
+    "comma-dangle": [ 2, "never" ],    
     "comma-spacing": ["error", { "before": false, "after": true }],
     "eol-last": ["error", "always"],
     "indent": ["error", 2, { "MemberExpression": 1 }],
