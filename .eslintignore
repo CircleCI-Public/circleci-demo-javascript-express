@@ -5,3 +5,5 @@ webpack.config.babel.js
 index.js
 node_modules/*
 node_modules/eslint/lib/*
+**/node_modules/*
+node_modules/
