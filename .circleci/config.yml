@@ -19,7 +19,7 @@ jobs:
           name: "Install and Lint Code"
           command: |
             sudo npm install -g eslint
-            sudo rm -rf /usr/local/lib/node_modules
+            sudo rm -rf /usr/local/lib/node_modules/eslint/lib/
             eslint .
       - run:
           name: install husky
