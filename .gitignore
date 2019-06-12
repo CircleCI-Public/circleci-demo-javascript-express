@@ -7,4 +7,4 @@ public/*
 dist
 coverage/
 .nyc_output/
-/node_modules/*
+/node_modules/eslint/lib/*
