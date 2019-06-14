@@ -29,5 +29,6 @@
     "allowImportExportEverywhere": false,
     "codeFrame": true
   },
-    "extends": "eslint:recommended"
+    "extends": "eslint:recommended",
+     "comma-dangle": ["error", "never"]
 }
