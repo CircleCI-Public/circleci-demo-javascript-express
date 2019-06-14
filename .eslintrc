@@ -23,6 +23,6 @@
         "node": true,
         "browser": true
     },
-    "parser": "babel-eslint",
+     "parser": "babel-eslint",
     "extends": "eslint:recommended"
 }
