@@ -19,6 +19,7 @@ jobs:
           name: "Install and Lint Code"
           command: |
             sudo npm install -g eslint@1.4.1
+            sudo npm install babel-eslint -g
             eslint .
       - run:
           name: install husky
