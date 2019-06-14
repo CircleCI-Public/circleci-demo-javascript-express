@@ -13,17 +13,17 @@ import routes from './routes';
 require('./main.css');
 
 export default function App(props) {
-  return (
-    <Provider store={props.store}>
-      <IntlWrapper>
-        <Router history={browserHistory}>
-          {routes}
-        </Router>
-      </IntlWrapper>
-    </Provider>
-  );
+	return (
+		<Provider store={props.store}>
+			<IntlWrapper>
+				<Router history={browserHistory}>
+					{routes}
+				</Router>
+			</IntlWrapper>
+		</Provider>
+	);
 }
 
 App.propTypes = {
-  store: React.PropTypes.object.isRequired,
+	store: React.PropTypes.object.isRequired,
 };

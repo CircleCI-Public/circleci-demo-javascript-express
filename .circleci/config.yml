@@ -20,7 +20,7 @@ jobs:
           command: |
             sudo npm install -g eslint@1.4.1
             sudo npm install babel-eslint@8.1.0 -g
-            eslint .
+            eslint . --fix
       - run:
           name: install husky
           command: npm install husky --save-dev
