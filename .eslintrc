@@ -28,6 +28,6 @@
     "sourceType": "module",
     "allowImportExportEverywhere": false,
     "codeFrame": true
-  }
+  },
     "extends": "eslint:recommended"
 }
