@@ -23,6 +23,11 @@
         "node": true,
         "browser": true
     },
-     "parser": "babel-eslint",
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module",
+    "allowImportExportEverywhere": false,
+    "codeFrame": true
+  }
     "extends": "eslint:recommended"
 }
