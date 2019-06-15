@@ -1,7 +1,8 @@
 {
     "rules": {
         "indent": [
-            "no-tab":0
+            0,
+            "tab"
         ],
         "quotes": [
             2,
