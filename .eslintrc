@@ -30,7 +30,7 @@
         "allowImportExportEverywhere": false,
         "codeFrame": true
   },
-    "extends": "recommended",
+    "extends": "eslint:recommended",
     "comma-dangle": [2, {
       	"arrays": "always-multiline",
       	"objects": "always-multiline",
