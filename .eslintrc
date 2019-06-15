@@ -16,8 +16,8 @@
             2,
             "always"
         ],
+        "no-mixed-spaces-and-tabs": 0,
         "no-unused-vars": 1
-        
     },
     "env": {
         "es6": true,
@@ -30,7 +30,7 @@
         "allowImportExportEverywhere": false,
         "codeFrame": true
   },
-    "extends": "eslint:smart-tabs",
+    "extends": "recommended",
     "comma-dangle": [2, {
       	"arrays": "always-multiline",
       	"objects": "always-multiline",
