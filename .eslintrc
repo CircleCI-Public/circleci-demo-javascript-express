@@ -16,13 +16,6 @@
             2,
             "always"
         ],
-       "comma-dangle": [2, {
-      	"arrays": "always-multiline",
-      	"objects": "always-multiline",
-      	"imports": "always-multiline",
-      	"exports": "always-multiline",
-      	"functions": "always-multiline"
-    }],
         "no-unused-vars": 1
         
     },
@@ -31,12 +24,19 @@
         "node": true,
         "browser": true
     },
-"parser": "babel-eslint",
-  "parserOptions": {
-    "sourceType": "module",
-    "allowImportExportEverywhere": false,
-    "codeFrame": true
+   "parser": "babel-eslint",
+   "parserOptions": {
+        "sourceType": "module",
+        "allowImportExportEverywhere": false,
+        "codeFrame": true
   },
-    "extends": "eslint:recommended"
-   
+    "extends": "eslint:recommended",
+    "comma-dangle": [2, {
+      	"arrays": "always-multiline",
+      	"objects": "always-multiline",
+      	"imports": "always-multiline",
+      	"exports": "always-multiline",
+      	"functions": "always-multiline"
+ 
+}]
 }
