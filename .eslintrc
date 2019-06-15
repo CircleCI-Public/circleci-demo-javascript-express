@@ -16,7 +16,15 @@
             2,
             "always"
         ],
+       "comma-dangle": [2, {
+      	"arrays": "always-multiline",
+      	"objects": "always-multiline",
+      	"imports": "always-multiline",
+      	"exports": "always-multiline",
+      	"functions": "always-multiline"
+    }],
         "no-unused-vars": 1
+        
     },
     "env": {
         "es6": true,
@@ -29,12 +37,6 @@
     "allowImportExportEverywhere": false,
     "codeFrame": true
   },
-    "extends": "eslint:recommended",
-    "comma-dangle": ["error", {
-        "arrays": always-multiline",
-        "objects": "always-multiline",
-        "imports": "always-multiline",
-        "exports": "always-multiline",
-        "functions": "ignore"
-    }]
+    "extends": "eslint:recommended"
+   
 }
