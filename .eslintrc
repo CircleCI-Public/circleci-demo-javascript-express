@@ -30,12 +30,5 @@
     "codeFrame": true
   },
     "extends": "eslint:recommended",
-    "comma-dangle": ["error", {
-        "arrays": "never",
-        "objects": "never",
-        "imports": "never",
-        "exports": "never",
-        "functions": "ignore"
-    }]
-      
+    "comma-dangle": ["error", "always-multiline"]  
 }
