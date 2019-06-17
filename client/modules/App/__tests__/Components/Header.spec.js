@@ -36,7 +36,7 @@ test('doesn\'t add post in pages other than home', t => {
 			context: {
 				router,
 				intl
-			},
+			}
 		}
 	);
 
