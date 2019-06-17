@@ -31,14 +31,6 @@
         "codeFrame": true
   },
     "extends": "eslint:recommended",
-
-    "comma-dangle": ["error", {
-        "arrays": "always",
-        "objects": "always",
-        "imports": "always",
-        "exports": "always",
-        "functions": "ignore"
-    }] 
-
+    "comma-dangle": ["error", "always"]
 
 }
