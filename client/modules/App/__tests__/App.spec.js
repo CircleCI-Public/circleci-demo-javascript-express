@@ -14,7 +14,7 @@ const dispatch = sinon.spy();
 const props = {
 	children,
 	dispatch,
-	intl: intlProp,
+	intl: intlProp
 };
 
 test('renders properly', t => {
@@ -44,14 +44,14 @@ test('calls componentDidMount', t => {
 					goBack: sinon.stub(),
 					goForward: sinon.stub(),
 					setRouteLeaveHook: sinon.stub(),
-					createHref: sinon.stub(),
+					createHref: sinon.stub()
 				},
-				intl,
+				intl
 			},
 			childContextTypes: {
 				router: React.PropTypes.object,
-				intl: intlShape,
-			},
+				intl: intlShape
+			}
 		},
 	);
 
