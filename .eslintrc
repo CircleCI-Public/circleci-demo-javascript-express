@@ -31,13 +31,14 @@
         "codeFrame": true
   },
     "extends": "eslint:recommended",
-    "trailing-comma": [true, {
-        "singleline": "never",
-         "multiline": {
-         "objects": "ignore",
-         "arrays": "ignore",
-         "functions": "ignore",
-         "typeLiterals": "ignore"
-  }
-}]
+
+    "comma-dangle": ["error", {
+        "arrays": "always",
+        "objects": "always",
+        "imports": "always",
+        "exports": "always",
+        "functions": "ignore"
+    }] 
+
+
 }
