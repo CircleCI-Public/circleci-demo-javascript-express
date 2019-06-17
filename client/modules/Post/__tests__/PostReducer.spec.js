@@ -12,7 +12,7 @@ test('action for ADD_POST is working', reducerTest(
 		content: 'Hello world!',
 		_id: null,
 		cuid: null,
-		slug: 'first-post',
+		slug: 'first-post'
 	}),
 	{ data: [{
 		name: 'prank',
@@ -20,7 +20,7 @@ test('action for ADD_POST is working', reducerTest(
 		content: 'Hello world!',
 		_id: null,
 		cuid: null,
-		slug: 'first-post',
+		slug: 'first-post'
 	}, 'foo'] },
 ));
 
@@ -32,7 +32,7 @@ test('action for DELETE_POST is working', reducerTest(
 		content: 'Hello world!',
 		cuid: 'abc',
 		_id: 1,
-		slug: 'first-post',
+		slug: 'first-post'
 	}] },
 	deletePost('abc'),
 	{ data: [] },
@@ -48,8 +48,8 @@ test('action for ADD_POSTS is working', reducerTest(
 			content: 'Hello world!',
 			_id: null,
 			cuid: null,
-			slug: 'first-post',
-		},
+			slug: 'first-post'
+		}
 	]),
 	{ data: [{
 		name: 'prank',
@@ -57,14 +57,14 @@ test('action for ADD_POSTS is working', reducerTest(
 		content: 'Hello world!',
 		_id: null,
 		cuid: null,
-		slug: 'first-post',
+		slug: 'first-post'
 	}] },
 ));
 
 test('getPosts selector', t => {
 	t.deepEqual(
 		getPosts({
-			posts: { data: ['foo'] },
+			posts: { data: ['foo'] }
 		}),
 		['foo']
 	);
@@ -73,7 +73,7 @@ test('getPosts selector', t => {
 test('getPost selector', t => {
 	t.deepEqual(
 		getPost({
-			posts: { data: [{ cuid: '123' }] },
+			posts: { data: [{ cuid: '123' }] }
 		}, '123'),
 		{ cuid: '123' }
 	);

@@ -30,6 +30,6 @@ export const shallowWithIntl = node => {
 export const mountWithIntl = node => {
 	return mount(nodeWithIntlProp(node), {
 		context: { intl },
-		childContextTypes: { intl: intlShape },
+		childContextTypes: { intl: intlShape }
 	});
 };

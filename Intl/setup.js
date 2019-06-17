@@ -1,7 +1,7 @@
 // list of available languages
 export const enabledLanguages = [
 	'en',
-	'fr',
+	'fr'
 ];
 
 // this object will have language-specific data added to it which will be placed in the state when that language is active

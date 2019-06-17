@@ -9,7 +9,7 @@ export const DELETE_POST = 'DELETE_POST';
 export function addPost(post) {
 	return {
 		type: ADD_POST,
-		post,
+		post
 	};
 }
 
@@ -19,8 +19,8 @@ export function addPostRequest(post) {
 			post: {
 				name: post.name,
 				title: post.title,
-				content: post.content,
-			},
+				content: post.content
+			}
 		}).then(res => dispatch(addPost(res.post)));
 	};
 }
@@ -28,7 +28,7 @@ export function addPostRequest(post) {
 export function addPosts(posts) {
 	return {
 		type: ADD_POSTS,
-		posts,
+		posts
 	};
 }
 
@@ -49,7 +49,7 @@ export function fetchPost(cuid) {
 export function deletePost(cuid) {
 	return {
 		type: DELETE_POST,
-		cuid,
+		cuid
 	};
 }
 

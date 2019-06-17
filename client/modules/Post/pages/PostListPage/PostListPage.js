@@ -46,7 +46,7 @@ PostListPage.need = [() => { return fetchPosts(); }];
 function mapStateToProps(state) {
 	return {
 		showAddPost: getShowAddPost(state),
-		posts: getPosts(state),
+		posts: getPosts(state)
 	};
 }
 
@@ -54,14 +54,14 @@ PostListPage.propTypes = {
 	posts: PropTypes.arrayOf(PropTypes.shape({
 		name: PropTypes.string.isRequired,
 		title: PropTypes.string.isRequired,
-		content: PropTypes.string.isRequired,
+		content: PropTypes.string.isRequired
 	})).isRequired,
 	showAddPost: PropTypes.bool.isRequired,
-	dispatch: PropTypes.func.isRequired,
+	dispatch: PropTypes.func.isRequired
 };
 
 PostListPage.contextTypes = {
-	router: React.PropTypes.object,
+	router: React.PropTypes.object
 };
 
 export default connect(mapStateToProps)(PostListPage);
