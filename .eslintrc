@@ -34,9 +34,9 @@
     "trailing-comma": [true, {
         "singleline": "never",
          "multiline": {
-         "objects": "always",
-         "arrays": "always",
-         "functions": "never",
+         "objects": "ignore",
+         "arrays": "ignore",
+         "functions": "ignore",
          "typeLiterals": "ignore"
   }
 }]
