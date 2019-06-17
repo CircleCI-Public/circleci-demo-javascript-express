@@ -33,13 +33,13 @@ export function Header(props, context) {
 }
 
 Header.contextTypes = {
-	router: React.PropTypes.object,
+	router: React.PropTypes.object
 };
 
 Header.propTypes = {
 	toggleAddPost: PropTypes.func.isRequired,
 	switchLanguage: PropTypes.func.isRequired,
-	intl: PropTypes.object.isRequired,
+	intl: PropTypes.object.isRequired
 };
 
 export default Header;

@@ -10,15 +10,15 @@ const intlProp = { ...intl, enabledLanguages: ['en', 'fr'] };
 
 test('renders the header properly', t => {
 	const router = {
-		isActive: sinon.stub().returns(true),
+		isActive: sinon.stub().returns(true)
 	};
 	const wrapper = shallow(
 		<Header switchLanguage={() => {}} intl={intlProp} toggleAddPost={() => {}} />,
 		{
 			context: {
 				router,
-				intl,
-			},
+				intl
+			}
 		}
 	);
 
@@ -28,14 +28,14 @@ test('renders the header properly', t => {
 
 test('doesn\'t add post in pages other than home', t => {
 	const router = {
-		isActive: sinon.stub().returns(false),
+		isActive: sinon.stub().returns(false)
 	};
 	const wrapper = shallow(
 		<Header switchLanguage={() => {}} intl={intlProp} toggleAddPost={() => {}} />,
 		{
 			context: {
 				router,
-				intl,
+				intl
 			},
 		}
 	);
@@ -45,7 +45,7 @@ test('doesn\'t add post in pages other than home', t => {
 
 test('toggleAddPost called properly', t => {
 	const router = {
-		isActive: sinon.stub().returns(true),
+		isActive: sinon.stub().returns(true)
 	};
 	const toggleAddPost = sinon.spy();
 	const wrapper = shallow(
@@ -53,8 +53,8 @@ test('toggleAddPost called properly', t => {
 		{
 			context: {
 				router,
-				intl,
-			},
+				intl
+			}
 		}
 	);
 

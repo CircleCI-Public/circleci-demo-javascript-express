@@ -7,7 +7,7 @@ import { mountWithIntl, shallowWithIntl } from '../../../../util/react-intl-test
 const post = { name: 'Prashant', title: 'Hello Mern', slug: 'hello-mern', cuid: 'f34gb2bh24b24b2', content: 'All cats meow \'mern!\'' };
 const props = {
 	post,
-	onDelete: () => {},
+	onDelete: () => {}
 };
 
 test('renders properly', t => {

@@ -7,7 +7,7 @@ import { mountWithIntl, shallowWithIntl } from '../../../../util/react-intl-test
 
 const props = {
 	addPost: () => {},
-	showAddPost: true,
+	showAddPost: true
 };
 
 test('renders properly', t => {

@@ -6,7 +6,7 @@ const initLocale = global.navigator && global.navigator.language || 'en';
 const initialState = {
 	locale: initLocale,
 	enabledLanguages,
-	...(localizationData[initLocale] || {}),
+	...(localizationData[initLocale] || {})
 };
 
 const IntlReducer = (state = initialState, action) => {
