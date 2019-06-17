@@ -31,12 +31,13 @@
         "codeFrame": true
   },
     "extends": "eslint:recommended",
-    "comma-dangle": [2, {
-      	"arrays": "only-multiline",
-      	"objects": "only-multiline",
-      	"imports": "only-multiline",
-      	"exports": "only-multiline",
-      	"functions": "only-multiline"
- 
+    "trailing-comma": [true, {
+        "singleline": "never",
+         "multiline": {
+         "objects": "always",
+         "arrays": "always",
+         "functions": "never",
+         "typeLiterals": "ignore"
+  }
 }]
 }
