@@ -19,8 +19,8 @@
   },
   "pre-commit": [
     "lint",
-    "test"
-  ],
+    "test" 
+   ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Hashnode/mern-starter.git"
