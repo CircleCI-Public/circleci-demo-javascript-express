@@ -8,13 +8,19 @@ jobs:
     steps:
       - checkout
       - run:
-          name: update-npm
+          name: Install NPM
           command: 'sudo npm install -g npm@5'
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
           name: install-npm-wee
           command: npm install
+      - run:
+          name: "Install and Lint Code"
+          command: |
+            sudo npm install -g eslint@1.4.1
+            sudo npm install babel-eslint@8.1.0 -g
+            eslint . --fix
       - run:
           name: install husky
           command: npm install husky --save-dev
@@ -34,5 +40,3 @@ jobs:
       - store_artifacts:
           path: coverage
           prefix: coverage
-      - store_test_results:
-          path: test-results.xml

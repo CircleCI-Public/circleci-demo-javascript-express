@@ -10,7 +10,7 @@ import intl from './modules/Intl/IntlReducer';
 
 // Combine all reducers into one root reducer
 export default combineReducers({
-  app,
-  posts,
-  intl,
+	app,
+	posts,
+	intl
 });
