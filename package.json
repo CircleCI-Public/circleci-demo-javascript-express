@@ -167,7 +167,8 @@
     "lines": 90,
     "functions": 90,
     "statements": 90,
-    "check-coverage": true
+
+   "check-coverage": true
   },
   "husky": {
     "hooks": {
