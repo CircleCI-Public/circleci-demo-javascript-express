@@ -17,6 +17,8 @@
     "coverage:check": "istanbul check-coverage",
     "lint": "eslint client server"
   },
+
+
   "pre-commit": [
     "lint",
     "test" 
