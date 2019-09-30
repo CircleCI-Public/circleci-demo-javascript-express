@@ -49,7 +49,7 @@ The Webpack configuration is minimal and beginner-friendly. You can customise an
 
 ### Server
 
-MERN uses express web framework. Our app sits in server.js where we check for NODE_ENV.
+MERN uses Express web framework. Our app sits in server.js where we check for NODE_ENV.
 
 If NODE_ENV is development, we apply Webpack middlewares for bundling and Hot Module Replacement.
 
@@ -150,7 +150,7 @@ Modules are the way of organising different domain-specific modules in the proje
 ## Misc
 
 ### Importing Assets
-Assets can be kept where you want and can be imported into your js files or css files. Those fill be served by webpack in development mode and copied to the dist folder during production.
+Assets can be kept where you want and can be imported into your .js files or .css files. Those fill be served by webpack in development mode and copied to the dist folder during production.
 
 ### ES6 support
 We use babel to transpile code in both server and client with `stage-0` plugin. So, you can use both ES6 and experimental ES7 features.
@@ -249,7 +249,7 @@ To make the hot reloading of CSS work, we are not extracting CSS in development.
 In development, after all scripts get loaded, react loads the CSS as BLOBs. That's why there is a second of FOUC in development.
 
 #### Client and Server Markup Mismatch
-This warning is visible only on development and totally harmless. This occurs to hash difference in `react-router`. To solve it, react router docs asks you to use `match` function. If we use `match`, `react-hot-reloader` stops working.
+This warning is visible only on development and totally harmless. This occurs due to hash difference in `react-router`. To solve it, react router docs asks you to use `match` function. If we use `match`, `react-hot-reloader` stops working.
 
 ## License
 MERN is released under the [MIT License](http://www.opensource.org/licenses/MIT).
