@@ -1,17 +1,8 @@
-![](http://res.cloudinary.com/hashnode/image/upload/w_200/v1466495663/static_imgs/mern/v2/mernio-logo.png)
+# CircleCI Demo JavaScript/Express.js [![CircleCI](https://circleci.com/gh/CircleCI-Public/circleci-demo-javascript-express.svg?style=shield)](https://circleci.com/gh/CircleCI-Public/circleci-demo-javascript-express) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
-# mern-starter
-![title](https://travis-ci.org/Hashnode/mern-starter.svg?branch=v2.0.0)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
-[![Discuss on Hashnode](
-https://hashnode.github.io/badges/mern.svg)](https://hashnode.com/n/mern)
+This project was built from a MERN Starter kit (original URLs broken). Discussions still [active here](https://hashnode.com/n/mern). MERN is Mongo, Express, React and NodeJS.
 
-
-MERN is a scaffolding tool which makes it easy to build isomorphic apps using Mongo, Express, React and NodeJS. It minimises the setup time and gets you up to speed using proven technologies.
-
-- [Website](http://mern.io)
-- [Documentation](http://mern.io/documentation.html)
-- [Discussions](https://hashnode.com/n/mern)
+See the [JavaScript language guide for CircleCI here](https://circleci.com/docs/2.0/language-javascript/).
 
 ## Quickstart
 
