@@ -1,4 +1,11 @@
 version: 2.1
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build
+
 jobs:
   build:
     working_directory: ~/mern-starter
