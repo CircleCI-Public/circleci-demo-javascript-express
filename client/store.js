@@ -7,26 +7,26 @@ import DevTools from './modules/App/components/DevTools';
 import rootReducer from './reducers';
 
 export function configureStore(initialState = {}) {
-  // Middleware and store enhancers
-  const enhancers = [
-    applyMiddleware(thunk),
-  ];
+	// Middleware and store enhancers
+	const enhancers = [
+		applyMiddleware(thunk)
+	];
 
-  if (process.env.CLIENT && process.env.NODE_ENV === 'development') {
-    // Enable DevTools only when rendering on client and during development.
-    enhancers.push(window.devToolsExtension ? window.devToolsExtension() : DevTools.instrument());
-  }
+	if (process.env.CLIENT && process.env.NODE_ENV === 'development') {
+		// Enable DevTools only when rendering on client and during development.
+		enhancers.push(window.devToolsExtension ? window.devToolsExtension() : DevTools.instrument());
+	}
 
-  const store = createStore(rootReducer, initialState, compose(...enhancers));
+	const store = createStore(rootReducer, initialState, compose(...enhancers));
 
-  // For hot reloading reducers
-  if (module.hot) {
-    // Enable Webpack hot module replacement for reducers
-    module.hot.accept('./reducers', () => {
-      const nextReducer = require('./reducers').default; // eslint-disable-line global-require
-      store.replaceReducer(nextReducer);
-    });
-  }
+	// For hot reloading reducers
+	if (module.hot) {
+		// Enable Webpack hot module replacement for reducers
+		module.hot.accept('./reducers', () => {
+			const nextReducer = require('./reducers').default; // eslint-disable-line global-require
+			store.replaceReducer(nextReducer);
+		});
+	}
 
-  return store;
+	return store;
 }

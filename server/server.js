@@ -16,9 +16,9 @@ const app = new Express();
 
 // Run Webpack dev server in development mode
 if (process.env.NODE_ENV === 'development') {
-  const compiler = webpack(config);
-  app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: config.output.publicPath }));
-  app.use(webpackHotMiddleware(compiler));
+	const compiler = webpack(config);
+	app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: config.output.publicPath }));
+	app.use(webpackHotMiddleware(compiler));
 }
 
 // React And Redux Setup
@@ -41,13 +41,13 @@ mongoose.Promise = global.Promise;
 
 // MongoDB Connection
 mongoose.connect(serverConfig.mongoURL, (error) => {
-  if (error) {
-    console.error('Please make sure Mongodb is installed and running!'); // eslint-disable-line no-console
-    throw error;
-  }
+	if (error) {
+		console.error('Please make sure Mongodb is installed and running!'); // eslint-disable-line no-console
+		throw error;
+	}
 
-  // feed some dummy data in DB.
-  dummyData();
+	// feed some dummy data in DB.
+	dummyData();
 });
 
 // Apply body Parser and server public assets and routes
@@ -59,13 +59,13 @@ app.use('/api', posts);
 
 // Render Initial HTML
 const renderFullPage = (html, initialState) => {
-  const head = Helmet.rewind();
+	const head = Helmet.rewind();
 
-  // Import Manifests
-  const assetsManifest = process.env.webpackAssets && JSON.parse(process.env.webpackAssets);
-  const chunkManifest = process.env.webpackChunkAssets && JSON.parse(process.env.webpackChunkAssets);
+	// Import Manifests
+	const assetsManifest = process.env.webpackAssets && JSON.parse(process.env.webpackAssets);
+	const chunkManifest = process.env.webpackChunkAssets && JSON.parse(process.env.webpackChunkAssets);
 
-  return `
+	return `
     <!doctype html>
     <html>
       <head>
@@ -84,7 +84,7 @@ const renderFullPage = (html, initialState) => {
         <script>
           window.__INITIAL_STATE__ = ${JSON.stringify(initialState)};
           ${process.env.NODE_ENV === 'production' ?
-          `//<![CDATA[
+		`//<![CDATA[
           window.webpackManifest = ${JSON.stringify(chunkManifest)};
           //]]>` : ''}
         </script>
@@ -96,54 +96,54 @@ const renderFullPage = (html, initialState) => {
 };
 
 const renderError = err => {
-  const softTab = '&#32;&#32;&#32;&#32;';
-  const errTrace = process.env.NODE_ENV !== 'production' ?
-    `:<br><br><pre style="color:red">${softTab}${err.stack.replace(/\n/g, `<br>${softTab}`)}</pre>` : '';
-  return renderFullPage(`Server Error${errTrace}`, {});
+	const softTab = '&#32;&#32;&#32;&#32;';
+	const errTrace = process.env.NODE_ENV !== 'production' ?
+		`:<br><br><pre style="color:red">${softTab}${err.stack.replace(/\n/g, `<br>${softTab}`)}</pre>` : '';
+	return renderFullPage(`Server Error${errTrace}`, {});
 };
 
 // Server Side Rendering based on routes matched by React-router.
 app.use((req, res, next) => {
-  match({ routes, location: req.url }, (err, redirectLocation, renderProps) => {
-    if (err) {
-      return res.status(500).end(renderError(err));
-    }
+	match({ routes, location: req.url }, (err, redirectLocation, renderProps) => {
+		if (err) {
+			return res.status(500).end(renderError(err));
+		}
 
-    if (redirectLocation) {
-      return res.redirect(302, redirectLocation.pathname + redirectLocation.search);
-    }
+		if (redirectLocation) {
+			return res.redirect(302, redirectLocation.pathname + redirectLocation.search);
+		}
 
-    if (!renderProps) {
-      return next();
-    }
+		if (!renderProps) {
+			return next();
+		}
 
-    const store = configureStore();
+		const store = configureStore();
 
-    return fetchComponentData(store, renderProps.components, renderProps.params)
-      .then(() => {
-        const initialView = renderToString(
-          <Provider store={store}>
-            <IntlWrapper>
-              <RouterContext {...renderProps} />
-            </IntlWrapper>
-          </Provider>
-        );
-        const finalState = store.getState();
+		return fetchComponentData(store, renderProps.components, renderProps.params)
+			.then(() => {
+				const initialView = renderToString(
+					<Provider store={store}>
+						<IntlWrapper>
+							<RouterContext {...renderProps} />
+						</IntlWrapper>
+					</Provider>
+				);
+				const finalState = store.getState();
 
-        res
-          .set('Content-Type', 'text/html')
-          .status(200)
-          .end(renderFullPage(initialView, finalState));
-      })
-      .catch((error) => next(error));
-  });
+				res
+					.set('Content-Type', 'text/html')
+					.status(200)
+					.end(renderFullPage(initialView, finalState));
+			})
+			.catch((error) => next(error));
+	});
 });
 
 // start app
 app.listen(serverConfig.port, (error) => {
-  if (!error) {
+	if (!error) {
     console.log(`MERN is running on port: ${serverConfig.port}! Build something amazing!`); // eslint-disable-line
-  }
+	}
 });
 
 export default app;
