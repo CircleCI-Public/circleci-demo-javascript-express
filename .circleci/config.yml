@@ -9,6 +9,7 @@ workflows:
 jobs:
   build:
     working_directory: ~/mern-starter
+    parallelism: 3
     docker:
       - image: circleci/node:10.16.3
       - image: mongo:4.2.0
