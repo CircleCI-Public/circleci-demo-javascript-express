@@ -62,6 +62,25 @@ export function getPost(req, res) {
 }
 
 /**
+ * Update a single post
+ * @param req
+ * @param res
+ * @returns void
+ */
+
+export async function updatePost (req, res) {
+  const post = await Post.findOne({ cuid: req.params.cuid});
+  if(!post){
+    res.status(404).send("Post does not exist");
+  }else{
+    const updatedPost = await Post.findOneAndUpdate({cuid}, req.body, {
+      new: true,
+    });
+    res.json({ post: updatedPost });
+  }
+}
+
+/**
  * Delete a post
  * @param req
  * @param res
