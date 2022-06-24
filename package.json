@@ -80,7 +80,7 @@
     "eventsource-polyfill": "^0.9.6",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
-    "jsdom": "^9.2.1",
+    "jsdom": "^16.5.0",
     "json-loader": "^0.5.4",
     "mock-css-modules": "^1.0.0",
     "mockgoose": "^6.0.3",
