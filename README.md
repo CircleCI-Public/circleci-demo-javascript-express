@@ -239,7 +239,7 @@ To make the hot reloading of CSS work, we are not extracting CSS in development.
 
 In development, after all scripts get loaded, react loads the CSS as BLOBs. That's why there is a second of FOUC in development.
 
-#### Client and Server Markup Mismatch
+#### Client and Server Markup Mismatch..
 This warning is visible only on development and totally harmless. This occurs to hash difference in `react-router`. To solve it, react router docs asks you to use `match` function. If we use `match`, `react-hot-reloader` stops working.
 
 ## License
