@@ -2,7 +2,7 @@
 
 This project was built from a MERN Starter kit (original URLs broken). Discussions still [active here](https://hashnode.com/n/mern). MERN is Mongo, Express, React and NodeJS.
 
-See the [JavaScript language guide for CircleCI here](https://circleci.com/docs/2.0/language-javascript/).
+Check this link out [JavaScript language guide for CircleCI here](https://circleci.com/docs/2.0/language-javascript/).
 
 ## Quickstart
 
