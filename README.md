@@ -243,4 +243,4 @@ In development, after all scripts get loaded, react loads the CSS as BLOBs. That
 This warning is visible only on development and totally harmless. This occurs to hash difference in `react-router`. To solve it, react router docs asks you to use `match` function. If we use `match`, `react-hot-reloader` stops working.
 
 ## License
-MERN is released under the [MIT License](http://www.opensource.org/licenses/MIT).
+MERN is released under the [MIT License](http://www.opensource.org/licenses/MIT) .
