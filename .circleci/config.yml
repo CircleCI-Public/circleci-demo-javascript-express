@@ -17,6 +17,20 @@ jobs:
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
+      - run: echo "Hello, world!" > workspace/echo-output  
+      - persist_to_workspace:
+          root: workspace
+        # Must be relative path from root
+          paths:
+          - echo-output  
+  persist-workspace:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - attach_workspace:
+          at: workspace
+      - run: cat workspace/echo-output  
+
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
@@ -24,3 +38,4 @@ workflows:
   say-hello-workflow:
     jobs:
       - say-hello
+      - persist-workspace
