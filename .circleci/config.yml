@@ -17,19 +17,19 @@ jobs:
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
-      - run: echo "Hello, world!" > workspace/echo-output  
+      - run: echo "Hello, world!" > ~/output.txt
       - persist_to_workspace:
-          root: workspace
+          root: ~/ 
         # Must be relative path from root
           paths:
-          - echo-output  
+          - output.txt 
   persist-workspace:
     docker:
       - image: cimg/base:stable
     steps:
       - attach_workspace:
-          at: workspace
-      - run: cat workspace/echo-output  
+          at: ~/
+      - run: cat ~/output.txt  
 
 
 # Invoke jobs via workflows
