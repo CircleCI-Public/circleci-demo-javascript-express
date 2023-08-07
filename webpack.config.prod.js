@@ -1,11 +1,11 @@
-var webpack = require('webpack');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var ManifestPlugin = require('webpack-manifest-plugin');
-var ChunkManifestPlugin = require('chunk-manifest-webpack-plugin');
-var cssnext = require('postcss-cssnext');
-var postcssFocus = require('postcss-focus');
-var postcssReporter = require('postcss-reporter');
-var cssnano = require('cssnano');
+let webpack = require('webpack');
+let ExtractTextPlugin = require('extract-text-webpack-plugin');
+let ManifestPlugin = require('webpack-manifest-plugin');
+let ChunkManifestPlugin = require('chunk-manifest-webpack-plugin');
+let cssnext = require('postcss-cssnext');
+let postcssFocus = require('postcss-focus');
+let postcssReporter = require('postcss-reporter');
+let cssnano = require('cssnano');
 
 module.exports = {
   devtool: 'hidden-source-map',
